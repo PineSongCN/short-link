@@ -1,0 +1,6 @@
+location ~ /inc/ {
+  return 404;
+}
+location ~* ^/(?![asset|api]) {
+  rewrite (\d+|\w+)$ /index.php?id=$1;
+}
